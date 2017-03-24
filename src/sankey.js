@@ -25,11 +25,11 @@ export default function() {
 
   // custom property for MTSS, following same convention above...
   sankey.totalSeasons = function (_) {
-      if (!arguments.length) return nodePadding;
+      if (!arguments.length) return totalSeasons;
       totalSeasons = +_;
       return sankey;
-  }  
-  
+  }
+
   sankey.nodes = function(_) {
     if (!arguments.length) return nodes;
     nodes = _;
@@ -126,6 +126,11 @@ export default function() {
   // nodes with no incoming links are assigned breadth zero, while
   // nodes with no outgoing links are assigned the maximum breadth.
   function computeNodeBreadths() {
+    const seasonPositionMap = {
+      F: 0,
+      W: 1,
+      S: 2,
+    };
     var remainingNodes = nodes,
         nextNodes,
         x = 0;

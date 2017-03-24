@@ -73,12 +73,12 @@ export default function() {
           x3 = xi(1 - curvature),
           y0 = d.source.y + d.sy + d.dy / 2,
           y1 = d.target.y + d.ty + d.dy / 2;
-
+      
       // this fixes bug with linear gradients when the link is perfectly horizontal
       if (y0 === y1){
           y1--;
       }
-
+      
       return "M" + x0 + "," + y0
            + "C" + x2 + "," + y0
            + " " + x3 + "," + y1

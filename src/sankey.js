@@ -25,7 +25,7 @@ export default function() {
 
   // custom property for MTSS, following same convention above...
   sankey.totalSeasons = function (_) {
-      if (!arguments.length) return nodePadding;
+      if (!arguments.length) return totalSeasons;
       totalSeasons = +_;
       return sankey;
   }

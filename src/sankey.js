@@ -126,6 +126,11 @@ export default function() {
   // nodes with no incoming links are assigned breadth zero, while
   // nodes with no outgoing links are assigned the maximum breadth.
   function computeNodeBreadths() {
+    const seasonPositionMap = {
+      F: 0,
+      W: 1,
+      S: 2,
+    };
     var remainingNodes = nodes,
         nextNodes,
         x = 0;
